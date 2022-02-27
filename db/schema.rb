@@ -26,16 +26,6 @@ ActiveRecord::Schema.define(version: 2022_02_27_195414) do
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.text "address"
-    t.string "mobile_number"
-    t.string "password"
-    t.string "password_confirmation"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "salons", force: :cascade do |t|
     t.string "company_name"
     t.string "gstin"
