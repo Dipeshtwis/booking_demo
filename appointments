@@ -1,0 +1,24 @@
+
+[1mFrom:[0m /home/spar/Desktop/booking_demo/app/models/appointment.rb:21 Appointment#check_available_chair:
+
+     [1;34m7[0m: [32mdef[0m [1;34mcheck_available_chair[0m
+     [1;34m8[0m:   counter = [1;34m0[0m
+     [1;34m9[0m:   appointments = [1;34;4mAppointment[0m.where([35mservice_id[0m: service_id)
+    [1;34m10[0m:   [32mif[0m start_time != [1;36mnil[0m && end_time != [1;36mnil[0m
+    [1;34m11[0m:     st = start_time.to_time.strftime([31m[1;31m"[0m[31m%k:%M[1;31m"[0m[31m[0m)
+    [1;34m12[0m:     et = end_time.to_time.strftime([31m[1;31m"[0m[31m%k:%M[1;31m"[0m[31m[0m)
+    [1;34m13[0m:     appointments.each [32mdo[0m |app|
+    [1;34m14[0m:       [32mif[0m (st >= app.start_time.to_time.strftime([31m[1;31m"[0m[31m%k:%M[1;31m"[0m[31m[0m) && st <= app.end_time.to_time.strftime([31m[1;31m"[0m[31m%k:%M[1;31m"[0m[31m[0m)) && (et >= app.start_time.to_time.strftime([31m[1;31m"[0m[31m%k:%M[1;31m"[0m[31m[0m) && et <= app.end_time.to_time.strftime([31m[1;31m"[0m[31m%k:%M[1;31m"[0m[31m[0m) )
+    [1;34m15[0m:         counter += [1;34m1[0m
+    [1;34m16[0m:       [32mend[0m
+    [1;34m17[0m:     [32mend[0m
+    [1;34m18[0m: 
+    [1;34m19[0m:     salon = service.salon_id
+    [1;34m20[0m:     available_chair = [1;34;4mSalon[0m.find(salon).chairs_counter
+ => [1;34m21[0m:     binding.pry
+    [1;34m22[0m:     [32mif[0m available_chair <= counter
+    [1;34m23[0m:       errors.add([33m:appointment[0m, [31m[1;31m'[0m[31mis already booked for this time [1;31m'[0m[31m[0m)
+    [1;34m24[0m:     [32mend[0m
+    [1;34m25[0m:   [32mend[0m
+    [1;34m26[0m: [32mend[0m
+

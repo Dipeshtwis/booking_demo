@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Appointments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>start_time</th>
+      <th>End_time</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.start_time.to_time.strftime("%k:%M") %></td>
+        <td><%= appointment.end_time.to_time.strftime("%k:%M") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'Back to service', salon_services_path %>

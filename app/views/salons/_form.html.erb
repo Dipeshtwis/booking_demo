@@ -1,0 +1,59 @@
+<%= form_with(model: salon) do |form| %>
+  <% if salon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(salon.errors.count, "error") %> prohibited this salon from being saved:</h2>
+
+      <ul>
+        <% salon.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gstin %>
+    <%= form.text_field :gstin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pan_number %>
+    <%= form.text_field :pan_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chairs_counter %>
+    <%= form.number_field :chairs_counter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening %>
+    <%= form.datetime_select :opening %>
+  </div>
+
+    <%#= form.label :days %>&nbsp;
+    <%# Date::DAYNAMES.each do |day| %>
+      <%#= form.check_box :days, {}, day, "" %>
+      <%#= day %>
+    <%# end %>
+  
+
+  <div class="field">
+    <%= form.label :closing %>
+    <%= form.datetime_select :closing %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

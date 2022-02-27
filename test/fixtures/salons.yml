@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_name: MyString
+  gstin: MyString
+  pan_number: MyString
+  address: MyText
+  chairs_counter: 1
+  opening: 2022-02-27 02:00:57
+  closing: 2022-02-27 02:00:57
+
+two:
+  company_name: MyString
+  gstin: MyString
+  pan_number: MyString
+  address: MyText
+  chairs_counter: 1
+  opening: 2022-02-27 02:00:57
+  closing: 2022-02-27 02:00:57

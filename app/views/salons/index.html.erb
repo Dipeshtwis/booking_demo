@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Salons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Gstin</th>
+      <th>Pan number</th>
+      <th>Address</th>
+      <th>Chairs counter</th>
+      <th>Opening days</th>
+      <th>Opening</th>
+      <th>Closing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @salons.each do |salon| %>
+      <tr>
+        <td><%= salon.company_name %></td>
+        <td><%= salon.gstin %></td>
+        <td><%= salon.pan_number %></td>
+        <td><%= salon.address %></td>
+        <td><%= salon.chairs_counter %></td>
+        <td><%= salon.opening.to_time.strftime("%k:%M") %></td>
+        <td><%= salon.closing.to_time.strftime("%k:%M") %></td>
+        <td><%= link_to 'Show', salon %></td>
+        <td><%= link_to 'Edit', edit_salon_path(salon) %></td>
+        <td><%= link_to 'Destroy', salon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Salon', new_salon_path %>

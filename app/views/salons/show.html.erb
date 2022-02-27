@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @salon.company_name %>
+</p>
+
+<p>
+  <strong>Gstin:</strong>
+  <%= @salon.gstin %>
+</p>
+
+<p>
+  <strong>Pan number:</strong>
+  <%= @salon.pan_number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @salon.address %>
+</p>
+
+<p>
+  <strong>Chairs counter:</strong>
+  <%= @salon.chairs_counter %>
+</p>
+
+<p>
+  <strong>Opening:</strong>
+  <%= @salon.opening.to_time.strftime("%k:%M") %>
+</p>
+
+<p>
+  <strong>Closing:</strong>
+  <%= @salon.closing.to_time.strftime("%k:%M") %>
+</p>
+
+<%= link_to 'Edit', edit_salon_path(@salon) %> |
+<%= link_to 'Back', salons_path %>
+<%= link_to 'See all services', salon_services_path(@salon) %>

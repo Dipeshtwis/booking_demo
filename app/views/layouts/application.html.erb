@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BookingDemo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+    <%#= link_to 'Login with customer', new_customer_path %>
+    <%= link_to 'Check all salon', salons_path %>
+    <% if user_signed_in? %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "sidebar-links__anchor" %>
+      <%= link_to 'My Appointments', user_path(current_user) %>
+      <span class="profile"><%= current_user.email %><span>
+    <% else %>
+      <%= link_to 'Register your salon', new_salon_path %>
+      <%= link_to 'Sign in', new_user_session_path %>
+      <%= link_to 'Sign up', new_user_registration_path %>
+    <% end %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

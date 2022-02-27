@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @service.name %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @service.cost %>
+</p>
+
+<p>
+  <strong>Time taken:</strong>
+  <%= @service.time_taken %>
+</p>
+
+
+
+<h1>All the Appointments of the services</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>start_time</th>
+      <th>End_time</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.start_time.to_time.strftime("%k:%M") %></td>
+        <td><%= appointment.end_time.to_time.strftime("%k:%M") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'Back', salon_services_path %>
+<%= link_to 'Book Appointment', new_salon_service_appointment_path(@salon.id, @service.id) %>
